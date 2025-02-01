@@ -1,0 +1,167 @@
+/* General Styles */
+body.add-student {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 90px auto;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #444;
+    margin-bottom: 10px;
+    margin-top: 1px;
+}
+
+/* Main Container */
+#add-container {
+    width: 80%;
+    max-width: 700px;
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px auto; /* Center the container horizontally */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the content inside the container */
+}
+
+/* Center Titles */
+#add-container h1, 
+#add-container h2, 
+#add-container h3 {
+    text-align: center;
+}
+
+/* Form Inputs */
+#add-container input[type="text"],
+#add-container input[type="email"] {
+    width: calc(100% - 40px);
+    max-width: 600px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+
+#add-container input:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+/* Status Paragraph */
+#status {
+    color: rgb(12, 144, 0);
+    font-weight: bold;
+}
+
+/* Capture Buttons */
+.capture-buttons-container {
+    display: flex;
+    gap: 10px; /* Adds a small gap between buttons */
+    justify-content: center; /* Center the buttons horizontally */
+    flex-wrap: wrap; /* Allows wrapping if buttons overflow */
+    margin: 20px 0;
+}
+
+.capture-buttons-container button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    min-width: 150px; /* Prevents buttons from becoming too small */
+    text-align: center;
+}
+
+.capture-buttons-container button:hover {
+    background-color: #1abc9c;
+}
+
+/* Captured Images Container */
+.captured-images-container {
+    display: flex;
+    justify-content: center; /* Center the image blocks horizontally */
+    gap: 20px; /* Add space between image blocks */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow image blocks to wrap if necessary */
+}
+
+.image-block {
+    text-align: center;
+}
+
+.image-block img {
+    width: auto;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    transform: scaleX(1);
+}
+
+
+/* Center the video feed */
+#video {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin: 20px auto; /* Center the video horizontally */
+    transform: scaleX(-1);
+}
+
+/* Buttons */
+#upload, #clear {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 20px 10px 0; /* Add some horizontal space between the buttons */
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+#clear {
+    background-color: #e74c3c;
+}
+
+#upload:hover {
+    background-color: #2ecc71;
+}
+
+#clear:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .capture-buttons-container {
+        flex-direction: row; /* Keep buttons side by side on smaller screens */
+    }
+
+    .capture-buttons-container button {
+        flex: unset; /* Remove flex property for buttons to control their width manually */
+        width: calc(33.33% - 10px); /* Make each button occupy one-third of the container width */
+    }
+
+    #add-container input[type="text"],
+    #add-container input[type="email"] {
+        width: 100%;                 /* Full width on smaller screens */
+        margin-bottom: 15px;         /* Adjust spacing */
+    }
+}
+
+

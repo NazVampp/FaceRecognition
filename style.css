@@ -1,0 +1,1399 @@
+/*-------------------- General Navbar Styles --------------------------*/
+.navbar {
+    background-color: #0b0a2d;
+    padding: 10px 20px; /* You can adjust this if needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Ensure navbar takes full width */
+    position: fixed; /* Optional: If you want it to stay at the top */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Optional: Ensure it stays above other content */
+}
+
+/* Logo Styling */
+.nav-logo {
+    height: 45px;
+    margin-right: 20px;
+}
+
+/* Logo Container */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0 50px 0 0; /* Added margin-right to move links to the left */
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+/* Navbar Buttons Styling */
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #3a4ca8, #2c3e91); /* Gradient background for modern look */
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links a:hover {
+    background: linear-gradient(90deg, #4a60d1, #354bb3); /* Slightly lighter gradient on hover */
+    transform: translateY(-3px); /* Lift button on hover */
+    color: #fff;
+}
+
+/* Logout Button with Icon Styling */
+.logout-link {
+    background: linear-gradient(90deg, #d9534f, #b52b27); /* Red gradient for logout button */
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.logout-link i {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.navbar .logout-link:hover {
+    background: linear-gradient(90deg, #ff5b52, #d9453d); /* Brighter red gradient on hover */
+    transform: translateY(-3px);
+}
+
+.logout-link i:hover {
+    color: #ffddde; /* Light red icon on hover */
+}
+
+/* Show the hamburger icon only on smaller screens */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide hamburger icon on larger screens */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Hide the navbar links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 10px;
+        position: absolute;
+        top: 60px; /* Position the popup below the navbar */
+        left: 0;
+        background-color: #0b0a2d; /* Background for the menu */
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    /* Display the hamburger icon on smaller screens */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        color: #fff;
+        font-size: 30px;
+        position: absolute;
+        top: 15px;
+        right: 70px; /* Adjust as needed */
+        z-index: 1000;
+    }
+
+    /* Make navbar links visible when the menu is toggled */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Navbar links styling on mobile */
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 18px;
+        background-color: #333;
+        color: #fff;
+    }
+}
+
+
+/* ---------------- Login Page Styling ---------------- */
+
+/* General Body Styles */
+body.loginPg {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #d5aeff, #a2c4ff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+
+/* Login Container */
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 20px 0;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading Styles */
+.login-container h2 {
+    margin-bottom: 25px;
+    color: #444;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Input Group Styles */
+.input-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    text-align: left;  
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;  /* Ensure padding doesn’t affect width */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Button Styles */
+#loginButton {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;  /* Add spacing above the button */
+}
+
+#loginButton:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Alert Styles */
+.alert {
+    color: red;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 25px;
+        width: 90%;
+    }
+
+    #loginButton {
+        font-size: 16px;
+    }
+}
+
+
+/* ----------------------- scan_face.php Styling---------------- */
+body.scan-face-page {
+    background-color: #f4f6f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Container for Face Recognition in scan_face.php */
+body.scan-face-page .scan-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    margin: 90px auto; /* Add margin-top to avoid overlap with navbar */
+    position: relative;
+    z-index: 1; /* Ensure it's above other elements */
+    margin-bottom: 30px; /* Add space at the bottom of the box */
+}
+
+/* Title Styling */
+body.scan-face-page h1 {
+    font-size: 36px;
+    color: #00023d;
+    margin-bottom: 20px;
+}
+
+/* Video Styling */
+body.scan-face-page #video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(79, 164, 255, 0.1);
+}
+
+/* Button Styling */
+body.scan-face-page button {
+    background: linear-gradient(90deg, #4da4b4, #377dff); /* Gradient for a more attractive button */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+body.scan-face-page button:hover {
+    background: linear-gradient(90deg, #12dbff, hsl(236, 100%, 45%)); /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+body.scan-face-page button:active {
+    background: linear-gradient(90deg, #2f0087, #0028b6); /* Active state with a deeper green */
+    transform: scale(0.98); /* Slightly shrink button on click */
+}
+
+/* Status Text Styling */
+body.scan-face-page #status {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+body.scan-face-page .error-text {
+    color: #e74c3c;
+}
+
+body.scan-face-page .label {
+    font-weight: bold;
+    color: #141414;
+}
+
+body.scan-face-page .result {
+    color: #333;
+}
+
+body.scan-face-page #summonButton,
+body.scan-face-page #captureFaceButton {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body.scan-face-page h1 {
+        font-size: 28px;
+    }
+
+    body.scan-face-page button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    body.scan-face-page #video {
+        width: 90%;
+        height: auto;
+    }
+
+    body.scan-face-page .scan-container {
+        width: 90%;
+    }
+}
+
+/* ----------------------- summon.php Styling ---------------- */
+body.summon-page {
+    background-color: #f0f4f8;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 90px auto;
+    padding: 0;
+}
+
+
+
+/* Main container styling */
+body.summon-page h1 {
+    font-size: 32px;
+    color: #2a2a2a;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* Student details section */
+body.summon-page .student-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #333;
+}
+
+body.summon-page .student-details p {
+    margin: 10px 0;
+}
+
+body.summon-page .student-details strong {
+    color: #007bff;
+}
+
+/* Form styling */
+body.summon-page form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+body.summon-page form label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+body.summon-page form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Styling for the Submit Fault button (Red color) */
+body.summon-page form button {
+    background-color: #d9534f;  /* Red color */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+body.summon-page form button:hover {
+    background-color: #910500;  /* Darker red on hover */
+}
+
+body.summon-page form button:active {
+    background-color: #ff0800;  /* Even darker red on active */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body.summon-page h1 {
+        font-size: 28px;
+    }
+
+    body.summon-page .student-details,
+    body.summon-page form {
+        width: 90%;
+    }
+
+    body.summon-page form button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+
+/* ----------------------- not_student.php Styling ---------------- */
+body.not-student-page {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 90px auto;
+    padding: 0;
+}
+
+/* Main title styling */
+body.not-student-page h1 {
+    font-size: 28px; /* Adjusted title size */
+    color: #2a2a2a;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Capture container styling (single container now) */
+body.not-student-page .capture-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%; /* Set to 60% to make it smaller */
+    max-width: 500px; /* Max width set to 500px */
+    margin: 0 auto; /* Centers the container */
+    text-align: center;
+}
+
+/* Styling for captured image */
+body.not-student-page .capture-container img {
+    width: 250px; /* Reduced image size */
+    height: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    transform: scaleX(1);
+}
+
+/* Form label styling */
+body.not-student-page form label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Adjust input styling to be centered */
+body.not-student-page form input {
+    width: 80%;         /* Set to 80% width to make it shorter */
+    max-width: 100%;    /* Allow inputs to expand */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling for the submit button */
+body.not-student-page form button {
+    background-color: #d9534f;  /* Red color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 85%;
+    transition: background-color 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.not-student-page form button:hover {
+    background-color: #a10500;  /* Darker red on hover */
+}
+
+body.not-student-page form button:active {
+    background-color: #ff0800;  /* Even darker red on active */
+}
+
+/* Responsive Design for max-width: 765px */
+@media (max-width: 765px) {
+    body.not-student-page {
+        padding: 20px;
+    }
+
+    .capture-container {
+        width: 80%; /* Adjust the container width */
+    }
+
+    body.not-student-page h1 {
+        font-size: 24px; /* Adjust the font size */
+    }
+
+    body.not-student-page form input {
+        width: 90%; /* Adjust the width for smaller devices */
+    }
+
+    body.not-student-page form button {
+        width: 95%; /* Make the button width responsive */
+    }
+}
+
+/* ----------------------- student_data.php Styling ---------------- */
+.student-data-page {
+    background-color: #f4f7fc; /* Light background for contrast */
+    font-family: Arial, sans-serif;
+}
+
+.view-records-page {
+    font-family: 'Arial', sans-serif; /* Same font as other pages */
+    color: #333;
+}
+
+
+/* Main Heading */
+.student-data-page h1 {
+    font-size: 36px;
+    color: #333;
+    text-align: left;
+    margin-top: 90px;
+    margin-bottom: 25px;
+    padding-left: 40px;
+}
+
+/* Button Styling */
+.student-data-page .go-to-add-btn {
+    display: inline-block;  /* Adjust button width to content */
+    margin-left: 40px;     /* Center button */
+    margin-bottom: 15px;
+    padding: 10px 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    max-width: 200px;       /* Set maximum width */
+    width: 50%;             /* Adjust width based on content */
+    text-align: center;     /* Ensure text is centered */
+}
+
+.go-to-add-btn:hover {
+    background-color: #00c603;
+    transform: scale(1.05);
+}
+
+/* Table Styling */
+table {
+    width: 95%;             /* Adjust width to 90% of the container */
+    margin: 20px auto;      /* Center the table horizontally */
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #6a6a6a;
+}
+
+th {
+    background-color: #1E2A47;
+    color: white;
+    font-size: 13px;
+}
+
+td {
+    font-size: 13px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternating row color */
+}
+
+tr:hover {
+    background-color: #e0f7fa;
+    transition: background-color 0.3s;
+}
+
+/* Wrapper for scrollable table */
+.table-container {
+    width: 95%; /* Ensure the container matches the table width */
+    margin: 20px auto; /* Center the table horizontally */
+    max-height: 400px; /* Set the maximum height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: auto; /* Enable horizontal scrolling for wide tables */
+    border-radius: 10px; /* Match the table's border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional for consistent styling */
+}
+
+/* Adjusted table styling for scrollable container */
+.table-container table {
+    margin: 0; /* Remove extra margins inside the container */
+    width: 100%; /* Ensure the table stretches to fit the container */
+    border-collapse: collapse; /* Keep the border style */
+}
+
+
+/*-------------------------Search Styling-------------------------*/
+
+/* Styling for the search form */
+.search-form {
+    position: absolute;
+    top: 155px; /* Adjust the distance from the top */
+    right: 45px; /* Align the search form to the right */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-form input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-form button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Remove underline from links */
+a {
+    text-decoration: none;
+}
+
+/* Style for the back button */
+.back-btn {
+    display: inline-block;
+    margin-left: 10px; /* Adjust spacing if needed */
+}
+
+.back-button {
+    background-color: #ff3700; /* Button background color */
+    border: none;
+    padding: 10px 15px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #891000; /* Darker color on hover */
+}
+
+.back-button i {
+    margin-right: 1px; /* Space between icon and text */
+}
+
+
+/* ---------------- Student Data Page Styling for max-width 750px ---------------- */
+@media (max-width: 750px) {
+    .search-form {
+        position: static;        /* Reset the absolute positioning */
+        display: flex;
+        gap: 10px;               /* Add space between the input and button */
+        width: 275px;             /* Adjust width as needed */
+    }
+
+    /* Page Container Adjustments */
+    .student-data-page {
+        padding: 30px; /* Reduce padding for smaller screens */
+        padding-top: 50px;
+    }
+
+    /* Main Heading */
+    .student-data-page h1 {
+        font-size: 24px;       /* Reduce font size */
+        margin: 20px 0;        /* Adjust spacing around the heading */
+        padding-left: 15px;       /* Remove left padding */
+    }
+
+    /* Button Styling */
+    .student-data-page .go-to-add-btn {
+        width: 100%;           /* Full width for smaller screens */
+        margin: 10px 0;        /* Center and space out the button */
+        font-size: 16px;       /* Slightly smaller font */
+        padding: 10px 0;       /* Adjust padding */       
+    }
+
+    /* Table Styling */
+    table {
+        width: 100%;           /* Ensure the table takes full width */
+        font-size: 12px;       /* Reduce font size for readability */
+        margin: 10px 0;        /* Adjust margin */
+    }
+
+    th, td {
+        padding: 10px;         /* Adjust padding inside table cells */
+    }
+
+    th {
+        font-size: 11px;       /* Smaller font size for headers */
+    }
+
+    td {
+        font-size: 11px;       /* Smaller font size for data cells */
+    }
+
+    /* Modal Styling */
+    .modal-content {
+        width: 90%;            /* Reduce modal width for smaller screens */
+        padding: 20px;         /* Adjust padding inside the modal */
+    }
+
+    .modal h2 {
+        font-size: 20px;       /* Reduce modal heading size */
+    }
+
+    /* Form Inputs */
+    .modal form input[type="text"],
+    .modal form input[type="email"],
+    .modal form input[type="file"] {
+        width: 100%;           /* Full width for inputs */
+        padding: 10px;         /* Adjust padding */
+        font-size: 14px;       /* Smaller font size */
+    }
+
+    .modal form button {
+        font-size: 16px;       /* Smaller button font */
+        padding: 12px;         /* Adjust padding */
+    }
+
+    /* Image Styling */
+    .student-images img {
+        max-width: 100px;      /* Smaller image size */
+        margin: 5px;           /* Add spacing between images */
+    }
+
+    .modal .image-container {
+        gap: 5px;              /* Adjust spacing between images */
+        margin-top: 10px;      /* Reduce top margin */
+    }
+
+    /* Icon Buttons for Edit, View, Delete */
+    button.icon-btn.edit,
+    button.icon-btn.view,
+    button.icon-btn.delete {
+        font-size: 16px;       /* Smaller icons */
+        padding: 5px;          /* Reduce padding */
+    }
+}
+
+
+/* ====================== Modal Styling ====================== */
+.modal {
+    display: none;  /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);  /* Transparent background */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+    font-size: 28px;
+    text-align: center;  /* Center align the title */
+    margin-bottom: 20px;
+    color: #333;
+    padding-left: 10px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+}
+
+/* Form Inputs */
+.modal form input[type="text"],
+.modal form input[type="email"],
+.modal form input[type="file"] {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Submit Button */
+.modal form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal form button:hover {
+    background-color: #45a049;
+    transform: scale(1.03);
+}
+
+/* =================== Image Styling in Modal =================== */
+
+/* Adjusting Image Layout */
+/* Adjusting Image Layout */
+.student-images img {
+    width: auto;               /* Maintain aspect ratio */
+    max-width: 150px;          /* Limit the initial width */
+    height: auto;              /* Maintain aspect ratio */
+    margin: 0 2px;             /* Space between images */
+    border-radius: 15px;       /* Optional: rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    cursor: pointer;           /* Pointer cursor on hover */
+}
+
+/* Hover Effect to Show Original Ratio */
+.student-images img:hover {
+    transform: scale(1.5);     /* Scale the image to 1.5x its size */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow for emphasis */
+    z-index: 10;               /* Ensure it appears above other elements */
+}
+
+/* Prevent layout shift on hover */
+.modal .image-container {
+    position: relative;        /* Create a positioning context */
+}
+
+.student-images img:hover {
+    position: relative;        /* Keep the image positioned properly */
+}
+
+
+
+/* =================== Icon Buttons for Edit, View, Delete =================== */
+
+/* Edit icon - Purple */
+button.icon-btn.edit {
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    color: #800080;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+button.icon-btn.edit:hover {
+    opacity: 0.7;
+}
+
+/* View icon - Blue */
+button.icon-btn.view {
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    color: #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+button.icon-btn.view:hover {
+    opacity: 0.7;
+}
+
+/* Delete icon - Red */
+button.icon-btn.delete {
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    color: #dc3545;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+button.icon-btn.delete:hover {
+    opacity: 0.7;
+}
+
+/*---------------------view_records.php styling-----------------------*/
+/* General Styles for View Records Page */
+html, body {
+    height: 100%; /* Ensure the body and html fill the entire viewport */
+    margin: 0; /* Remove default margins */
+}
+
+.view-records-content {
+    background-color: #f4f7fc;
+    padding: 70px;
+    min-height: 100%; /* Ensure the background fills the whole height */
+    box-sizing: border-box; /* Make sure padding is included in the height calculation */
+}
+
+.view-records-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.view-records-content h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.view-records-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.view-records-content table th, .view-records-content table td {
+    padding: 10px;
+    text-align: center;  /* Centering the data */
+    border: 1px solid #a3a3a3;
+}
+
+.view-records-content table th {
+    background-color: #050026;
+}
+
+.view-records-content table td img {
+    max-width: 50px;
+    height: auto;
+}
+
+/* Button Styling for View Records Page */
+.view-records-content .icon-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 20px;  /* Increased size for the icons */
+}
+
+.view-records-content .icon-btn i {
+    margin-right: 0;  /* Remove margin to avoid extra space */
+}
+
+.view-records-content .icon-btn.delete {
+    color: red;
+}
+
+.view-records-content .icon-btn:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styling */
+.view-records-content .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.view-records-content .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.view-records-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.view-records-content .close:hover,
+.view-records-content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add some spacing around the tables and forms */
+.view-records-content form {
+    display: inline;
+}
+
+/* Make the tables scrollable */
+.view-records-content .table-container {
+    max-height: 300px; /* Adjust this value to set the desired table height */
+    overflow-y: auto;
+}
+
+@media (max-width: 750px) {
+    /* Adjust padding for the main container */
+    .view-records-content {
+        padding: 30px; /* Reduce padding for smaller screens */
+        padding-top: 50px;
+    }
+
+    /* Adjust heading sizes */
+    .view-records-content h1 {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+
+    .view-records-content h2 {
+        font-size: 1.25rem; /* Reduce font size */
+    }
+
+    /* Make the table scrollable horizontally */
+    .view-records-content .table-container {
+        max-height: 300px; /* Adjust this value to set the desired table height */
+        overflow-y: auto;
+    }
+
+    .view-records-content table {
+        width: 100%; /* Ensure the table spans full width */
+    }
+
+    /* Reduce padding in table cells */
+    .view-records-content table th,
+    .view-records-content table td {
+        padding: 8px; /* Reduce padding for better fit */
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    /* Adjust image size inside tables */
+    .view-records-content table td img {
+        max-width: 40px; /* Shrink image for smaller screens */
+    }
+
+    /* Buttons in the table */
+    .view-records-content .icon-btn {
+        font-size: 16px; /* Reduce icon button size */
+    }
+
+    /* Adjust modal width */
+    .view-records-content .modal-content {
+        width: 90%; /* Reduce modal width on smaller screens */
+    }
+
+    /* Navigation adjustment */
+    .nav-student {
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+
+/* -------------------- Login Page Styling for max-width 400px --------------------- */
+@media (max-width: 400px) {
+
+    /* Adjust login container */
+    .login-container {
+        padding: 10px;
+        width: 80%;
+    }
+
+    /* Adjust login heading */
+    .login-container h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    /* Adjust input field */
+    .input-group input {
+        padding: 10px;
+        width: 90%;
+        font-size: 14px;
+    }
+
+    /* Adjust login button */
+    #loginButton {
+        font-size: 14px;
+        padding: 12px;
+        width: 90%;
+        margin-bottom: 25px;
+    }
+
+    /* Adjust form input label */
+    .input-group label {
+        font-size: 14px;
+        margin-left: 18px;
+    } 
+
+    /* Alert message */
+    .alert {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+}
+
+/* -------------------- Scan face Page Styling for max-width 400px --------------------- */
+@media (max-width: 400px) {
+    /* Container for Face Recognition in scan_face.php */
+    body.scan-face-page .scan-container {
+        padding: 13px;
+        margin-top: 80px; /* Adjust to avoid overlap with navbar */
+    }
+
+    /* Title Styling */
+    body.scan-face-page h1 {
+        font-size: 24px; /* Smaller title font size */
+        margin-bottom: 14px;
+    }
+
+    /* Video Styling */
+    body.scan-face-page #video {
+        width: 100%; /* Make video fill the container */
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    /* Button Styling */
+    body.scan-face-page button {
+        font-size: 14px;
+        padding: 10px 10px;
+        width: 100%; /* Make button span the width of the container */
+    }
+
+    /* Status Text Styling */
+    body.scan-face-page #status {
+        font-size: 16px; /* Adjust status font size for smaller screens */
+    }
+
+    /* Adjust margins and padding for small screens */
+    body.scan-face-page .error-text,
+    body.scan-face-page .label,
+    body.scan-face-page .result {
+        font-size: 14px;
+    }
+
+    /* Hide some buttons for better visibility */
+    body.scan-face-page #summonButton,
+    body.scan-face-page #captureFaceButton {
+        display: block; /* Optional: Adjust button visibility */
+        margin-top: 15px;
+    }
+}
+
+/* -------------------- Summon Page Styling for max-width 400px --------------------- */
+@media (max-width: 400px) {
+    body.summon-page h1 {
+        font-size: 24px; /* Smaller title size */
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    body.summon-page .student-details,
+    body.summon-page form {
+        width: 85%; /* Adjust to fit smaller screens */
+    }
+
+    body.summon-page .student-details p,
+    body.summon-page form label {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    body.summon-page form button {
+        font-size: 16px; /* Adjust button text size */
+        padding: 10px 20px; /* Adjust button padding */
+    }
+
+    body.summon-page form select {
+        font-size: 14px; /* Smaller font size for small screens */
+        padding: 10px;   /* Adjust padding for better fit */
+        width: 100%;     /* Ensure dropdown takes full width */
+        margin-bottom: 1px; /* Reduced margin to save space */
+    }
+}
+
+
+/* -------------------- Not Student Page Styling for max-width 400px --------------------- */
+@media (max-width: 550px) {
+    /* Centering the body content */
+    body.not-student-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Container adjustments */
+    .capture-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95%;          /* Slightly increased width */
+        max-width: 380px;    /* Increased max width */
+        padding: 20px;       /* Reasonable padding */
+        text-align: center;
+    }
+
+    /* Adjust the image to fit the container */
+    .capture-container img {
+        display: block;
+        max-width: 100%;     /* Ensure it fits the container */
+        height: auto;        /* Maintain aspect ratio */
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        border-radius: 8px;  /* Optional: rounded corners */
+    }
+
+    /* Adjust heading */
+    body.not-student-page h1 {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 20px; /* Adjusted spacing */
+        margin-top: 1px;
+    }
+
+    /* Center the form itself */
+    body.not-student-page form {
+        display: flex;
+        flex-direction: column; /* Stack input and button vertically */
+        justify-content: center;
+        align-items: center;    /* Center inputs and button horizontally */
+        width: 100%;
+    }
+
+    /* Input field adjustments */
+    body.not-student-page form input {
+        width: 90%;               /* Slightly smaller than full width */
+        margin-bottom: 10px;      /* Spacing between inputs */
+        padding: 12px;
+        text-align: center;       /* Optional: text alignment inside inputs */
+        box-sizing: border-box;   /* Ensure consistent box sizing */
+    }
+
+    /* Button adjustments */
+    body.not-student-page form button {
+        width: 90%;               /* Slightly smaller than full width */
+        padding: 12px;
+        margin-top: 10px;         /* Space between input and button */
+        box-sizing: border-box;   /* Ensure consistent box sizing */
+    }
+}
+
+/* General styling for the summon button */
+#summonButton {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* Text color */
+    background-color: red; /* Red background */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the summon button */
+#summonButton:hover {
+    background-color: darkred; /* Darker red on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Disabled state for the summon button */
+#summonButton:disabled {
+    background-color: gray; /* Gray background for disabled */
+    cursor: not-allowed; /* Indicate disabled */
+    opacity: 0.6; /* Slight transparency */
+}
+
+
